@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration>
+
+      <appender name="errabbit" class="org.mintcode.errabbit.logback.LogbackAppender">
+        <param name="host" value="tcp://localhost:61616"/>
+        <param name="rabbitID" value="test"/>
+        <pattern>%-4relative [%thread] %-5level %logger{35} - %msg %n</pattern>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="errabbit" />
+    </root>
+
+</configuration>
